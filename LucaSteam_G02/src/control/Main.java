@@ -9,6 +9,7 @@ public class Main {
 		
 		System.out.println("Cambio");
 		System.out.println("Ayuda diosito");
+		System.out.println("Diosito: morios con eclipse, infieles");
 
 	}
 
