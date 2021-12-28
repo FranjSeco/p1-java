@@ -4,15 +4,18 @@ package data;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
+import com.opencsv.CSVParser;
+import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
-import com.opencsv.bean.CsvToBeanBuilder;
+import com.opencsv.CSVReaderBuilder;
+//import com.opencsv.bean.CsvToBeanBuilder;
+import com.opencsv.exceptions.CsvException;
 
-import model.Game;
+//import model.Game;
 
 
 
@@ -41,18 +44,28 @@ public  class DataStock {
 		
 		
 		
-		String fileName = "/Users/bubbahula/git/p1-java/LucaSteam_G02/vgsales.csv";
+		String fileName = "C:/Users/claud/git/p1-java/LucaSteam_G02/archivoFinal2.csv";
 		
-		List<Game> gamesList;
+		//List<Game> gamesList;
 		
-			try {
-				gamesList = new CsvToBeanBuilder(new FileReader(fileName))
+			/*try (CSVReader reader = new CSVReader(new FileReader(fileName))) {
+	            List<String[]> r = reader.readAll();
+	            r.forEach(x -> System.out.println(Arrays.toString(x)));
+	        
+				/*gamesList = new CsvToBeanBuilder(new FileReader(fileName))
 				        .withType(Game.class)
 				        .build()
 				        .parse();
 				
-				 gamesList.forEach(System.out::println);
-				 
+				 gamesList.forEach(System.out::println);*/	 
+		  CSVParser csvParser = new CSVParserBuilder().withSeparator(';').build(); // custom separator
+		  try(CSVReader reader = new CSVReaderBuilder(
+		          new FileReader(fileName))
+		          .withCSVParser(csvParser)   // custom CSV parser
+		          .withSkipLines(1)           // skip the first line, header info
+		          .build()){
+		      List<String[]> r = reader.readAll();
+		      r.forEach(x -> System.out.println(Arrays.toString(x)));
 				 
 			} catch (IllegalStateException e) {
 				// TODO Auto-generated catch block
@@ -60,6 +73,12 @@ public  class DataStock {
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				System.out.println("Error");
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (CsvException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 			
 			
