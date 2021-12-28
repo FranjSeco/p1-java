@@ -8,7 +8,7 @@ public class Main {
 		// TODO Auto-generated method stub
 		
 		System.out.println("Cambio");
-		System.out.println("Bruhería");
+		System.out.println("Ayuda diosito");
 
 	}
 
