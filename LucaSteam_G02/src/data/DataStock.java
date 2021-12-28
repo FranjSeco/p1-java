@@ -46,7 +46,7 @@ public class DataStock {
 
 	}
 
-	public Map ReadData() {
+	public Map<Integer, Game> ReadData() {
 
 		String fileName = "C:\\Users\\alumno\\git\\p1-java\\LucaSteam_G02\\src\\data\\archivoFinal2.csv";
 
