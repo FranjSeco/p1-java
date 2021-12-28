@@ -79,9 +79,6 @@ public  class DataStock {
                 }
             }
         
-
-
-
         
 				 
 			} catch (IllegalStateException e) {
