@@ -5,16 +5,23 @@ import java.util.Objects;
 
 import utilities.Datos;
 
+import com.opencsv.bean.CsvBindByName;
+
 /**
 *
 * @author Grupo2
 */
 
 public class Game {
+	@CsvBindByName(column="name")
 private String name;
+	@CsvBindByName(column="genre")
 private String genre;
+	@CsvBindByName(column="platform")
 private String platform;
+	@CsvBindByName(column="publisher")
 private String publisher;
+	@CsvBindByName(column="year")
 private int year;
 
 public Game() {
