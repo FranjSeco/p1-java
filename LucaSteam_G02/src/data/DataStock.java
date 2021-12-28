@@ -15,6 +15,8 @@ import com.opencsv.CSVReaderBuilder;
 //import com.opencsv.bean.CsvToBeanBuilder;
 import com.opencsv.exceptions.CsvException;
 
+import model.Game;
+
 //import model.Game;
 
 
@@ -44,7 +46,7 @@ public  class DataStock {
 		
 		
 		
-		String fileName = "C:/Users/claud/git/p1-java/LucaSteam_G02/archivoFinal2.csv";
+		String fileName = "C:\\Users\\alumno\\git\\p1-java\\LucaSteam_G02\\src\\data\\archivoFinal2.csv";
 		
 		//List<Game> gamesList;
 		
@@ -73,17 +75,11 @@ public  class DataStock {
             for (String[] arrays : r) {
                 System.out.println("\nString[" + listIndex++ + "] : " + Arrays.toString(arrays));
 
-                int index = 0;
-                for (String array : arrays) {
-                    System.out.println(index++ + " : " + array);
-                }
-            }
-        
-
-
-
-        
-				 
+                
+                    Game a=new Game(arrays[0],arrays[1],arrays[2],arrays[3],arrays[4]);
+                    System.out.println("Esto es un juego: "+a);
+                
+            } 
 			} catch (IllegalStateException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
