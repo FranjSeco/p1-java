@@ -58,14 +58,31 @@ public  class DataStock {
 				        .parse();
 				
 				 gamesList.forEach(System.out::println);*/	 
-		  CSVParser csvParser = new CSVParserBuilder().withSeparator(';').build(); // custom separator
+		  /*CSVParser csvParser = new CSVParserBuilder().withSeparator(';').build(); // custom separator
 		  try(CSVReader reader = new CSVReaderBuilder(
 		          new FileReader(fileName))
 		          .withCSVParser(csvParser)   // custom CSV parser
 		          .withSkipLines(1)           // skip the first line, header info
 		          .build()){
 		      List<String[]> r = reader.readAll();
-		      r.forEach(x -> System.out.println(Arrays.toString(x)));
+		      r.forEach(x -> System.out.println(Arrays.toString(x)));*/
+		List<String[]> r;
+        try (CSVReader reader = new CSVReader(new FileReader(fileName))) {
+            r = reader.readAll();
+            int listIndex = 0;
+            for (String[] arrays : r) {
+                System.out.println("\nString[" + listIndex++ + "] : " + Arrays.toString(arrays));
+
+                int index = 0;
+                for (String array : arrays) {
+                    System.out.println(index++ + " : " + array);
+                }
+            }
+        
+
+
+
+        
 				 
 			} catch (IllegalStateException e) {
 				// TODO Auto-generated catch block
