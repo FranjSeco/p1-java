@@ -1,7 +1,11 @@
 package model;
 
 
+
+import com.opencsv.bean.CsvBindByPosition;
+
 import java.util.Objects;
+
 
 import utilities.Datos;
 
@@ -13,16 +17,21 @@ import com.opencsv.bean.CsvBindByName;
 */
 
 public class Game {
-	@CsvBindByName(column="name")
-private String name;
-	@CsvBindByName(column="genre")
-private String genre;
-	@CsvBindByName(column="platform")
-private String platform;
-	@CsvBindByName(column="publisher")
-private String publisher;
-	@CsvBindByName(column="year")
-private int year;
+	@CsvBindByPosition(position = 0)
+	private String name;
+	
+	@CsvBindByPosition(position = 1)
+	private String genre;
+	
+	@CsvBindByPosition(position = 2)
+	private String platform;
+	
+	@CsvBindByPosition(position = 3)
+	private String publisher;
+	
+	@CsvBindByPosition(position = 4)
+	private int year;
+
 
 public Game() {
 }
@@ -38,10 +47,10 @@ public Game(String name,String genre,String platform,String publisher,int year) 
 public Game createGame() {
 	try {
         this.name =Datos.recogeString("Introduce el nombre del Juego");
-        this.genre =Datos.recogeString("Introduce el género");
+        this.genre =Datos.recogeString("Introduce el gï¿½nero");
         this.platform=Datos.recogeString("Introduce la plataforma");
         this.publisher=Datos.recogeString("Introduce el editor");
-        this.year = Datos.recogeInt("Introduce el año de publicación");
+        this.year = Datos.recogeInt("Introduce el aï¿½o de publicaciï¿½n");
     } catch (Exception e) {
         e.getStackTrace();
     }
