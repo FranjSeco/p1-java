@@ -20,16 +20,7 @@ import model.Game;
 //import model.Game;
 
 public class DataStock {
-	public static void AddProducto(int codigo, Game p) {
-		if (gameStock.containsKey(codigo)) {
-			System.out.println("Error, no se puede añadir el juego");
-
-		} else {
-			gameStock.put(codigo, p);
-
-		}
-
-	}
+	
 
 	private static Map<Integer, Game> gameStock;
 
@@ -44,6 +35,7 @@ public class DataStock {
 	public void setGameStock(Map<Integer, Game> gameStock) {
 		DataStock.gameStock = gameStock;
 	}
+<<<<<<< HEAD
 	
 	
 	public static void ReadData() {
@@ -80,6 +72,18 @@ public class DataStock {
             for (String[] arrays : r) {
                 System.out.println("\nString[" + listIndex++ + "] : " + Arrays.toString(arrays));
 =======
+=======
+	public static void AddProducto(int codigo, Game p) {
+		if (gameStock.containsKey(codigo)) {
+			System.out.println("Error, no se puede añadir el juego");
+
+		} else {
+			gameStock.put(codigo, p);
+
+		}
+
+	}
+>>>>>>> branch 'main' of https://github.com/FranjSeco/p1-java.git
 
 	public Map ReadData() {
 
