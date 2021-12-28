@@ -1,7 +1,11 @@
 package model;
 
 
+
 import com.opencsv.bean.CsvBindByPosition;
+
+import java.util.Objects;
+
 
 import utilities.Datos;
 
@@ -85,6 +89,26 @@ public String toString() {
 	return "Game [name=" + name + ", genre=" + genre + ", platform=" + platform + ", publisher=" + publisher + ", year="
 			+ year + "]";
 }
+
+@Override
+public int hashCode() {
+	return Objects.hash(genre, name, platform, publisher, year);
+}
+
+@Override
+public boolean equals(Object obj) {
+	if (this == obj)
+		return true;
+	if (obj == null)
+		return false;
+	if (getClass() != obj.getClass())
+		return false;
+	Game other = (Game) obj;
+	return Objects.equals(genre, other.genre) && Objects.equals(name, other.name)
+			&& Objects.equals(platform, other.platform) && Objects.equals(publisher, other.publisher)
+			&& year == other.year;
+}
+
 
 
 }
