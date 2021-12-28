@@ -15,8 +15,8 @@ public class Main {
 
 
 		
-		Map j=new DataStock().ReadData();
-		System.out.println(j.get(16590).getClass().getName());
+		Map<Integer, Game> j=new DataStock().ReadData();
+		System.out.println(j.get(16590).getGenre());
 
 		//new PlatformGames().startPlatform();
 

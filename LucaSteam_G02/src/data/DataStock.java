@@ -20,16 +20,7 @@ import model.Game;
 //import model.Game;
 
 public class DataStock {
-	public static void AddProducto(int codigo, Game p) {
-		if (gameStock.containsKey(codigo)) {
-			System.out.println("Error, no se puede añadir el juego");
-
-		} else {
-			gameStock.put(codigo, p);
-
-		}
-
-	}
+	
 
 	private static Map<Integer, Game> gameStock;
 
@@ -43,6 +34,16 @@ public class DataStock {
 
 	public void setGameStock(Map<Integer, Game> gameStock) {
 		DataStock.gameStock = gameStock;
+	}
+	public static void AddProducto(int codigo, Game p) {
+		if (gameStock.containsKey(codigo)) {
+			System.out.println("Error, no se puede añadir el juego");
+
+		} else {
+			gameStock.put(codigo, p);
+
+		}
+
 	}
 
 	public Map ReadData() {
