@@ -35,7 +35,7 @@ public class DataStock {
 	public void setGameStock(Map<Integer, Game> gameStock) {
 		DataStock.gameStock = gameStock;
 	}
-<<<<<<< HEAD
+
 	
 	
 	public static void ReadData() {
@@ -71,8 +71,7 @@ public class DataStock {
             int listIndex = 0;
             for (String[] arrays : r) {
                 System.out.println("\nString[" + listIndex++ + "] : " + Arrays.toString(arrays));
-=======
-=======
+
 	public static void AddProducto(int codigo, Game p) {
 		if (gameStock.containsKey(codigo)) {
 			System.out.println("Error, no se puede añadir el juego");
@@ -83,19 +82,16 @@ public class DataStock {
 		}
 
 	}
->>>>>>> branch 'main' of https://github.com/FranjSeco/p1-java.git
-
 	public Map ReadData() {
 
-		String fileName = "C:\\Users\\alumno\\git\\p1-java\\LucaSteam_G02\\src\\data\\archivoFinal2.csv";
->>>>>>> branch 'main' of https://github.com/FranjSeco/p1-java.git
+		String fileName = "C:/Users/claud/git/p1-java/LucaSteam_G02/src/data/DataStock/archivoFinal2.csv";
 
-<<<<<<< HEAD
+
                 
                     Game a=new Game(arrays[0],arrays[1],arrays[2],arrays[3],arrays[4]);
                     System.out.println("Esto es un juego: "+a);
                 
-            } 
+            
 
 			} catch (IllegalStateException e) {
 				// TODO Auto-generated catch block
@@ -109,7 +105,6 @@ public class DataStock {
 			} catch (CsvException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-=======
 		// List<Game> gamesList;
 
 		/*
@@ -140,12 +135,10 @@ public class DataStock {
 				Game a = new Game(arrays[0], arrays[1], arrays[2], arrays[3], arrays[4]);
 				System.out.println(a.getName());
 				DataStock.AddProducto(listIndex, a);
->>>>>>> branch 'main' of https://github.com/FranjSeco/p1-java.git
+
 			}
-<<<<<<< HEAD
+
 				
-		
-=======
 		} catch (IllegalStateException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -162,7 +155,6 @@ public class DataStock {
 		
 		return gameStock;
 
->>>>>>> branch 'main' of https://github.com/FranjSeco/p1-java.git
 	}
 
 }
