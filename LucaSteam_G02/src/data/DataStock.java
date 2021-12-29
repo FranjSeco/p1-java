@@ -64,9 +64,6 @@ public class DataStock {
 		//Map<Integer, Game> j=new DataStock().ReadData();
 		System.out.println(gameStock);
 		
-		
-		
-		
 	}
 	
 	
