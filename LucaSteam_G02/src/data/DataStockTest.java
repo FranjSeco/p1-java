@@ -55,35 +55,7 @@ class DataStockTest {
 		
 	}
 	
-Set<String> uniquePublisher=new HashSet<>();
-	
-	public Set<String> getPublisher() {
-		int gameCount = juegos.size();
-		for (int i = 1; i < gameCount; i++) {
-			uniquePublisher.add(juegos.get(i).getPublisher());
-		}
-		return uniquePublisher;}
-	
-	
-	@Test
-	void testFiltroPublisher() {
-		//Given
-		Game juego1=new Game("FIFA16","PS3","2016","Sports","EA");
-		Game juego2=new Game("COD","PS3","2015","Shooter","Activision");
-		Game juego3=new Game("LoL","PC","2010","Sports","Riot");
-		
-		//When
-		juegos.put(1, juego1);
-		juegos.put(2, juego2);
-		juegos.put(3, juego3);
-		Set<String> comprobador=new HashSet<>();
-		comprobador.add(juego1.getPublisher());
-		comprobador.add(juego2.getPublisher());
-		
-		//Then
-		assertEquals(getPublisher(),comprobador);
-		
-	}
+
 	public boolean AddProducto(int codigo, Game g) {
 
 		if (juegos.containsKey(codigo)) {
@@ -121,6 +93,36 @@ Set<String> uniquePublisher=new HashSet<>();
 		
 		//Then
 		assertEquals(AddProducto(codigoJuego2,juego2),false);
+		
+	}
+	
+Set<String> uniquePublisher=new HashSet<>();
+	
+	public Set<String> getPublisher() {
+		int gameCount = juegos.size();
+		for (int i = 1; i < gameCount; i++) {
+			uniquePublisher.add(juegos.get(i).getPublisher());
+		}
+		return uniquePublisher;}
+	
+	
+	@Test
+	void testFiltroPublisher() {
+		//Given
+		Game juego1=new Game("FIFA16","PS3","2016","Sports","EA");
+		Game juego2=new Game("COD","PS3","2015","Shooter","Activision");
+		Game juego3=new Game("LoL","PC","2010","Sports","Riot");
+		
+		//When
+		juegos.put(1, juego1);
+		juegos.put(2, juego2);
+		juegos.put(3, juego3);
+		Set<String> comprobador=new HashSet<>();
+		comprobador.add(juego1.getPublisher());
+		comprobador.add(juego2.getPublisher());
+		
+		//Then
+		assertEquals(getPublisher(),comprobador);
 		
 	}
 	/*public Map<Integer, Game> ReadData() {
