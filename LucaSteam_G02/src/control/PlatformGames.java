@@ -35,7 +35,7 @@ public class PlatformGames {
 				break;
 				
 			case 2:
-				//Añadir producto
+				//AÃ±adir producto
 				System.out.println();	
 				System.out.println("Has elegido la opcion 2.");	
 				System.out.println();	
@@ -60,6 +60,15 @@ public class PlatformGames {
 				
 				break;
 				
+
+			case 5:
+				//filtro por aÃ±o
+        System.out.println();	
+				System.out.println("Has elegido la opcion 5.");	
+				System.out.println();	
+				services.filterYear();
+				break;
+
 			case 0:
                 continuar = salir();
                 break;
@@ -71,7 +80,7 @@ public class PlatformGames {
 		return continuar;
 	}
 	private boolean salir() throws Exception {
-        String sino = Datos.recogeString("   ¿Estas seguro?(S/N)");
+        String sino = Datos.recogeString("   Â¿Estas seguro?(S/N)");
         return (sino.toUpperCase().charAt(0) != 'S');
     }
 }
