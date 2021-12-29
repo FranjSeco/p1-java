@@ -47,7 +47,7 @@ public class DataStock {
 	public boolean AddProducto(int codigo, Game g) {
 
 		if (gameStock.containsKey(codigo)) {
-			System.out.println("Error, no se puede a�adir el juego");
+			System.out.println("Error, no se puede anadir el juego");
 			return false;
 
 		} else {
@@ -56,15 +56,20 @@ public class DataStock {
 		}
 	}
 	public void ListarProductos() {
+		System.out.println();	
+		System.out.println("Los 100 primeros numeros:");	
+		System.out.println();	
 		for(int i=1;i<100;i++) {
 		System.out.println(gameStock.get(i));	
 		}
+
 	}
 	public Map<Integer, Game> ReadData() {
 
 
 
 		String fileName = "/Users/bubbahula/git/p1-java/LucaSteam_G02/src/data/archivoFinal2.csv";
+
 
 		List<String[]> r;
 		try (CSVReader reader = new CSVReader(new FileReader(fileName))) {
@@ -103,10 +108,17 @@ public class DataStock {
 	}
 
 	public void filterGenre(String genre) {
+		System.out.println();	
+		System.out.println("Esta es la lista filtrada en base al genero "+ genre +" : ");	
+		System.out.println();	
 		for (int i = 0; i < gameStock.size(); i++) {
 			if (gameStock.get(i).getGenre().equalsIgnoreCase(genre)) {
 				System.out.println(gameStock.get(i));
 			}
 		}
+		
+		System.out.println();	
+		System.out.println("Fin de la lista filtrada en base al genero "+ genre +".");	
+		System.out.println();	
 	}
 }
