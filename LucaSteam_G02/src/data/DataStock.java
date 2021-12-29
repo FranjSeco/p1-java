@@ -41,10 +41,10 @@ public class DataStock {
 	}
 	
 	public boolean AddProducto(Game g) {
-		return AddProducto((int) (Math.random() * 100000), g);
+		return AddProducto(gameStock.size(), g);
 	}
 
-	public void AddProducto(int codigo, Game p) {
+	public boolean AddProducto(int codigo, Game g) {
 
 		if (gameStock.containsKey(codigo)) {
 			System.out.println("Error, no se puede a�adir el juego");
