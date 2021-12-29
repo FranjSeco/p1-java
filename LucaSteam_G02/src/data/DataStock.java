@@ -61,7 +61,7 @@ public class DataStock {
 		System.out.println(gameStock.get(i));	
 		}
 
-	
+	}
 	public Map<Integer, Game> ReadData() {
 
 
