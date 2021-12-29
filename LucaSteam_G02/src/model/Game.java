@@ -112,7 +112,9 @@ public class Game {
 		Game other = (Game) obj;
 		return Objects.equals(genre, other.genre) && Objects.equals(name, other.name)
 				&& Objects.equals(platform, other.platform) && Objects.equals(publisher, other.publisher)
-				&& year == other.year;
+				&& Objects.equals(year, other.year);
 	}
 
 }
+
+
