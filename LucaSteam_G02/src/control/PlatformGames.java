@@ -1,15 +1,22 @@
 package control;
 
+import java.util.Map;
+
+import data.DataStock;
+
+import services.SuperServices;
 /**
 *
 * @author Grupo2
 */
 import gui.Menu;
+import model.Game;
 import utilities.Datos;
 
 public class PlatformGames {
-
+		
 	public void startPlatform() {
+		
 		boolean seguir = true;
 		do {
 			Menu.showMenu();
@@ -24,6 +31,11 @@ public class PlatformGames {
 			switch (Datos.recogeInt()) {
 			case 1:
 				// MOSTRAR LISTA
+				//System.out.println(listaJuegos);
+				break;
+			case 3:
+				//filtro genero
+				
 				break;
 			case 0:
                 continuar = salir();
