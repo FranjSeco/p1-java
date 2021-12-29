@@ -6,8 +6,7 @@ import services.SuperServices;
 *
 * @author Grupo2
 */
-import gui.Menu;import model.Game;
-import services.SuperServices;
+import gui.Menu;
 import utilities.Datos;
 
 public class PlatformGames {	
@@ -27,10 +26,12 @@ public class PlatformGames {
 		try {
 			switch (Datos.recogeInt()) {
 			case 1:
+				//mostrr lista todos los juegos
 				services.ListarProductos();
 				break;
 				
 			case 2:
+				//Añadir producto
 				services.AddProducto();
 				System.out.println("Has dado de alta un juego nuevo.");
           break;
@@ -39,8 +40,6 @@ public class PlatformGames {
 			case 3:
 				//filtro genero
 				services.filterGenre();
-				
-
 				break;
 			case 0:
                 continuar = salir();

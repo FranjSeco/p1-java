@@ -52,28 +52,14 @@ public class DataStock {
 
 		} else {
 			gameStock.put(codigo, g);
-			System.out.println(g);
 			return true;
-			
-
 		}
-
 	}
-	
 	public void ListarProductos() {
 		//Map<Integer, Game> j=new DataStock().ReadData();
-		System.out.println(gameStock);
-		
-		
-		
-		
+		System.out.println(gameStock);	
 	}
-	
-	
-
 	public Map<Integer, Game> ReadData() {
-
-
 		String fileName = "C:\\Users\\alumno\\git\\p1-java\\LucaSteam_G02\\src\\data\\archivoFinal2.csv";
 		List<String[]> r;
 		try (CSVReader reader = new CSVReader(new FileReader(fileName))) {
@@ -83,7 +69,6 @@ public class DataStock {
 				Game a = new Game(arrays[0], arrays[1], arrays[2], arrays[3], arrays[4]);
 				this.AddProducto(listIndex, a);
 				listIndex++;
-
 			}
 		} catch (IllegalStateException e) {
 			// TODO Auto-generated catch block
