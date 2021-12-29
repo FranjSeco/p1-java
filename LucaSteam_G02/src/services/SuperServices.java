@@ -23,6 +23,17 @@ public class SuperServices {
 		}
 		listaJuegos.filterGenre(desiredGenre);
 	}
+	public void filterYear() {
+		Menu.showYear();
+		int caso=0;
+		
+		try {
+			caso = Datos.recogeInt();
+		} catch (Exception e) {
+			System.out.println("error: " + e.toString());
+		}
+		listaJuegos.filterYear(caso);
+	}
   	public void AddProducto() {
 		listaJuegos.AddProducto();
 		

@@ -11,6 +11,7 @@ import java.util.Set;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
 import model.Game;
+import utilities.Datos;
 
 /**
  *
@@ -33,13 +34,13 @@ public class DataStock {
 	public void setGameStock(Map<Integer, Game> gameStock) {
 		this.gameStock = gameStock;
 	}
-	
+
 	public boolean AddProducto() {
 		Game g = new Game();
 		g.createGame();
 		return AddProducto(g);
 	}
-	
+
 	public boolean AddProducto(Game g) {
 		return AddProducto(gameStock.size(), g);
 	}
@@ -55,15 +56,19 @@ public class DataStock {
 			return true;
 		}
 	}
+
 	public void ListarProductos() {
+
 		System.out.println();	
 		System.out.println("Los 100 primeros numeros:");	
 		System.out.println();	
 		for(int i=1;i<100;i++) {
 		System.out.println(gameStock.get(i));	
+
 		}
 
 	}
+
 	public Map<Integer, Game> ReadData() {
 
 
@@ -118,5 +123,61 @@ public class DataStock {
 		System.out.println();	
 		System.out.println("Fin de la lista filtrada en base al genero "+ genre +".");	
 		System.out.println();	
+	}
+
+	public void filterYear(int filter) {
+		switch (filter) {
+		case 0:
+			filterExactYear();
+			break;
+		case 1:
+			filterByCentury();
+			break;
+		case 2:
+			filterEvenYear();
+			break;
+		}
+	}
+
+	public void filterExactYear() {
+		System.out.println("Introduzca el año que desea consultar");
+		int year = 0;
+		try {
+			year = Datos.recogeInt();
+		} catch (Exception e) {
+			System.out.println("error: " + e.toString());
+		}
+		for (int i = 1; i < gameStock.size(); i++) {
+			if (!(gameStock.get(i).getYear().equalsIgnoreCase("N/A"))) {
+				Integer partYear=Integer.parseInt(gameStock.get(i).getYear()) ;
+			if (partYear== year) {
+				System.out.println(gameStock.get(i));
+			}
+			}
+		}
+	}
+
+	public void filterByCentury() {
+		System.out.println("Valor en String del object: " + gameStock.get(10).getYear());
+		System.out.println("valor parseado: " + Integer.valueOf(gameStock.get(10).getYear()));
+		for (int i = 1; i < gameStock.size(); i++) {
+			if (!(gameStock.get(i).getYear().equalsIgnoreCase("N/A"))) {
+				Integer year = Integer.valueOf(gameStock.get(i).getYear());
+				if (year < 2001) {
+					System.out.println(gameStock.get(i));
+				}
+			}
+		}
+	}
+
+	public void filterEvenYear() {
+		for (int i = 1; i < gameStock.size(); i++) {
+			if (!(gameStock.get(i).getYear().equalsIgnoreCase("N/A"))) {
+				int year=Integer.valueOf(gameStock.get(i).getYear());
+			if ( year% 2 == 0) {
+				System.out.println(gameStock.get(i));
+			}
+			}
+		}
 	}
 }
