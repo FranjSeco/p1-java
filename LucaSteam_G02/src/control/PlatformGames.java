@@ -51,6 +51,15 @@ public class PlatformGames {
 				System.out.println();	
 				services.filterGenre();
 				break;
+			case 4: 
+				//filtro editor
+				System.out.println();	
+				System.out.println("Has elegido la opcion 4.");	
+				System.out.println();	
+				services.filterPublisher();
+				
+				break;
+				
 			case 0:
                 continuar = salir();
                 break;

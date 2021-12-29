@@ -25,6 +25,7 @@ public class Menu {
 		System.out.println("       1.Consultar lista de todos los juegos  ");
 		System.out.println("       2.Dar de alta un nuevo juego   ");
 		System.out.println("       3.Filtrar la lista de juegos por genero  ");
+		System.out.println("       4.Filtrar la lista de juegos por distribuidor  ");
 
 	}
 
@@ -36,6 +37,19 @@ public class Menu {
 
 		p.forEach(Genre -> {
 			System.out.println("       " + contador + "." + Genre + "       ");
+			contador++;
+
+		});
+
+	}
+	public static void showPublisher(Set<String> q) {
+		System.out.println("---------------------------------");
+		System.out.println("          FILTRO DISTRIBUIDOR         ");
+		System.out.println("---------------------------------");
+		System.out.println("    ¿Qué distribuidor desea?           ");
+
+		q.forEach(Publisher -> {
+			System.out.println("       " + contador + "." + Publisher + "       ");
 			contador++;
 
 		});
