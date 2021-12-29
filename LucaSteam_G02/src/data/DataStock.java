@@ -74,9 +74,7 @@ public class DataStock {
 
 
 
-
-		String fileName = "/Users/bubbahula/git/p1-java/LucaSteam_G02/src/data/archivoFinal2.csv";
-
+		String fileName = "./archivoFinal2.csv";
 
 
 		List<String[]> r;

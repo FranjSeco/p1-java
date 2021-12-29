@@ -39,10 +39,11 @@ public class Game {
 	public Game createGame() {
 		try {
 			this.name = Datos.recogeString("Introduce el nombre del Juego");
-			this.genre = Datos.recogeString("Introduce el g�nero");
 			this.platform = Datos.recogeString("Introduce la plataforma");
-			this.publisher = Datos.recogeString("Introduce el editor");
 			this.year = Datos.recogeString("Introduce el a�o de publicaci�n");
+			this.genre = Datos.recogeString("Introduce el g�nero");
+			this.publisher = Datos.recogeString("Introduce el editor");
+			
 		} catch (Exception e) {
 			e.getStackTrace();
 		}
