@@ -23,6 +23,20 @@ public class SuperServices {
 		}
 		listaJuegos.filterGenre(desiredGenre);
 	}
+
+	public void filterPublisher() {
+		Menu.showPublisher(listaJuegos.getPublisher());
+		String desiredPublisher = "";
+		try {
+			String[] publishList = listaJuegos.getPublisher().toArray(new String[listaJuegos.getPublisher().size()]);
+			int position = Datos.recogeInt();
+			desiredPublisher = publishList[position];
+		} catch (Exception e) {
+			System.out.println("error: " + e.toString());
+		}
+		listaJuegos.filterPublisher(desiredPublisher);
+	}
+	
 	public void filterYear() {
 		Menu.showYear();
 		int caso=0;
@@ -37,9 +51,9 @@ public class SuperServices {
   	public void AddProducto() {
 		listaJuegos.AddProducto();
 		
-	}
-	
+	}	
 	public void ListarProductos() {
 		listaJuegos.ListarProductos();
   }
+
 }
