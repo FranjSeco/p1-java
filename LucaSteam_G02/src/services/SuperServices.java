@@ -24,8 +24,7 @@ public class SuperServices {
 		listaJuegos.filterGenre(desiredGenre);
 	}
 
-<<<<<<< HEAD
-=======
+
 	public void filterPublisher() {
 		Menu.showPublisher(listaJuegos.getPublisher());
 		String desiredPublisher = "";
@@ -39,7 +38,7 @@ public class SuperServices {
 		listaJuegos.filterPublisher(desiredPublisher);
 	}
 	
->>>>>>> branch 'main' of https://github.com/FranjSeco/p1-java.git
+
 	public void filterYear() {
 		Menu.showYear();
 		int caso=0;
