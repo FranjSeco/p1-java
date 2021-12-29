@@ -26,7 +26,7 @@ public class PlatformGames {
 		try {
 			switch (Datos.recogeInt()) {
 			case 1:
-				//mostrr lista todos los juegos
+				//mostar lista todos los juegos
 				services.ListarProductos();
 				break;
 				
