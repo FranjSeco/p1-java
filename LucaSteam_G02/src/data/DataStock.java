@@ -56,8 +56,9 @@ public class DataStock {
 		}
 	}
 	public void ListarProductos() {
-		//Map<Integer, Game> j=new DataStock().ReadData();
-		System.out.println(gameStock);	
+		for(int i=1;i<100;i++) {
+		System.out.println(gameStock.get(i));	
+		}
 	}
 	public Map<Integer, Game> ReadData() {
 		String fileName = "C:\\Users\\alumno\\git\\p1-java\\LucaSteam_G02\\src\\data\\archivoFinal2.csv";
