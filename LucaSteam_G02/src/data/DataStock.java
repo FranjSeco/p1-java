@@ -73,12 +73,8 @@ public class DataStock {
 
 	public Map<Integer, Game> ReadData() {
 
-<<<<<<< HEAD
 		String fileName = "C:\\Users\\Franç\\git\\p1-java\\LucaSteam_G02\\src\\data\\archivoFinal2.csv";
-=======
 
-		String fileName = "C:\\Users\\alumno\\git\\p1-java\\LucaSteam_G02\\src\\data\\archivoFinal2.csv";
->>>>>>> branch 'main' of https://github.com/FranjSeco/p1-java.git
 		List<String[]> r;
 		try (CSVReader reader = new CSVReader(new FileReader(fileName))) {
 			r = reader.readAll();
