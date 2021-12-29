@@ -123,7 +123,7 @@ Set<String> uniquePublisher=new HashSet<>();
 		assertEquals(AddProducto(codigoJuego2,juego2),false);
 		
 	}
-	public Map<Integer, Game> ReadData() {
+	/*public Map<Integer, Game> ReadData() {
 
 
 		String fileName = "./archivoFinal2.csv";
@@ -170,7 +170,7 @@ Set<String> uniquePublisher=new HashSet<>();
 		//Then
 		//Aseg�rame que el m�todo crea el mapa igual que si lo creo yo a mano
 		assertEquals(ReadData(),pepito);
-	}
+	}*/
 	
 
 
