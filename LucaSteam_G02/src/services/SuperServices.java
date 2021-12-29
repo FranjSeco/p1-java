@@ -23,6 +23,7 @@ public class SuperServices {
 		}
 		listaJuegos.filterGenre(desiredGenre);
 	}
+	
   	public void AddProducto() {
 		listaJuegos.AddProducto();
 		
