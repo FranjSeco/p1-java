@@ -56,7 +56,7 @@ public class DataStock {
 		}
 	}
 	public void ListarProductos() {
-
+		System.out.println("LOS 100 PRIMEROS JUEGOS:");	
 		for(int i=1;i<100;i++) {
 		System.out.println(gameStock.get(i));	
 		}
