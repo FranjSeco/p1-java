@@ -54,6 +54,36 @@ class DataStockTest {
 		assertEquals(getGenre(),comprobador);
 		
 	}
+	
+Set<String> uniquePublisher=new HashSet<>();
+	
+	public Set<String> getPublisher() {
+		int gameCount = juegos.size();
+		for (int i = 1; i < gameCount; i++) {
+			uniquePublisher.add(juegos.get(i).getPublisher());
+		}
+		return uniquePublisher;}
+	
+	
+	@Test
+	void testFiltroPublisher() {
+		//Given
+		Game juego1=new Game("FIFA16","PS3","2016","Sports","EA");
+		Game juego2=new Game("COD","PS3","2015","Shooter","Activision");
+		Game juego3=new Game("LoL","PC","2010","Sports","Riot");
+		
+		//When
+		juegos.put(1, juego1);
+		juegos.put(2, juego2);
+		juegos.put(3, juego3);
+		Set<String> comprobador=new HashSet<>();
+		comprobador.add(juego1.getPublisher());
+		comprobador.add(juego2.getPublisher());
+		
+		//Then
+		assertEquals(getPublisher(),comprobador);
+		
+	}
 	public boolean AddProducto(int codigo, Game g) {
 
 		if (juegos.containsKey(codigo)) {
@@ -71,7 +101,7 @@ class DataStockTest {
 		//Given
 		Game juego1=new Game("FIFA16","PS3","2016","Sports","EA");
 		//when
-		//Añado el juego al mapa con clave
+		//Aï¿½ado el juego al mapa con clave
 		int codigo=1;
 		
 		//Then
@@ -85,7 +115,7 @@ class DataStockTest {
 		Game juego1=new Game("FIFA16","PS3","2016","Sports","EA");
 		Game juego2=new Game("COD","PS3","2015","Shooter","Activision");
 		//When 
-		//Intentamos añadir un juego con la misma clave que otro existente
+		//Intentamos aï¿½adir un juego con la misma clave que otro existente
 		juegos.put(1, juego1);
 		int codigoJuego2=1;
 		
@@ -138,8 +168,10 @@ class DataStockTest {
 		Game juego3=new Game("LoL","PC","2010","Sports","Riot");
 		pepito.put(0,juego1);
 		//Then
-		//Asegúrame que el método crea el mapa igual que si lo creo yo a mano
+		//Asegï¿½rame que el mï¿½todo crea el mapa igual que si lo creo yo a mano
 		assertEquals(ReadData(),pepito);
 	}
+	
+
 
 }
