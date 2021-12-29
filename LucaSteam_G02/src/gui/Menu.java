@@ -7,8 +7,9 @@ public class Menu {
 		System.out.println("           LUCASTEAM             ");
 		System.out.println("---------------------------------");
 		System.out.println("");
-		System.out.println("     ¿Qué desea hacer?");
+		System.out.println("     ï¿½Quï¿½ desea hacer?");
 		System.out.println("       1.Consultar lista de todos los juegos  ");
+		System.out.println("       2.Dar de alta un nuevo juego   ");
 	}
 
 }

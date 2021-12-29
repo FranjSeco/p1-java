@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -35,21 +36,47 @@ public class DataStock {
 	public void setGameStock(Map<Integer, Game> gameStock) {
 		DataStock.gameStock = gameStock;
 	}
-	public static void AddProducto(int codigo, Game p) {
+	
+	public boolean AddProducto() {
+		Game g = new Game();
+		g.createGame();
+		return AddProducto(g);
+	}
+	
+	public boolean AddProducto(Game g) {
+		return AddProducto((int) (Math.random() * 100000), g);
+	}
+	//static void
+	public static boolean AddProducto(int codigo, Game g) {
 		if (gameStock.containsKey(codigo)) {
-			System.out.println("Error, no se puede añadir el juego");
+			System.out.println("Error, no se puede aï¿½adir el juego");
+			return false;
 
 		} else {
-			gameStock.put(codigo, p);
+			gameStock.put(codigo, g);
+			System.out.println(g);
+			return true;
+			
 
 		}
 
 	}
+	
+	public void ListarProductos() {
+		//Map<Integer, Game> j=new DataStock().ReadData();
+		System.out.println(gameStock);
+		
+		
+		
+		
+	}
+	
+	
 
 
 	public Map<Integer, Game> ReadData() {
 
-		String fileName = "C:\\Users\\alumno\\git\\p1-java\\LucaSteam_G02\\src\\data\\archivoFinal2.csv";
+		String fileName = "/Users/bubbahula/git/p1-java/LucaSteam_G02/src/data/archivoFinal2.csv";
 
 		// List<Game> gamesList;
 
@@ -79,7 +106,7 @@ public class DataStock {
 				//System.out.println("\nString[" +  + "] : " + Arrays.toString(arrays));
 				listIndex++;
 				Game a = new Game(arrays[0], arrays[1], arrays[2], arrays[3], arrays[4]);
-				System.out.println(a.getName());
+				//System.out.println(a.getName());
 				DataStock.AddProducto(listIndex, a);
 			}
 		} catch (IllegalStateException e) {

@@ -7,6 +7,7 @@ import data.DataStock;
 import model.Game;
 
 
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -15,12 +16,12 @@ public class Main {
 
 
 		
-		Map<Integer, Game> j=new DataStock().ReadData();
-		System.out.println(j.get(16590).getGenre());
 
-		//new PlatformGames().startPlatform();
+		new PlatformGames().startPlatform();
 
-
+		
+		
+		
 
 	}
 

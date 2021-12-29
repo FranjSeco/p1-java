@@ -6,9 +6,10 @@ import java.util.List;
 
 import com.opencsv.bean.CsvToBeanBuilder;
 
+import data.DataStock;
 import model.Game;
 public class SuperServices {
-	public static void dataReader() {
+/*	public static void dataReader() {
 		try {
 		List<Game> beans=new CsvToBeanBuilder<Game>(new FileReader("C:\\Users\\alumno\\git\\p1-java\\LucaSteam_G02\\src\\services\\archivoFinal2.csv"))
 				.withType(Game.class).build().parse();
@@ -16,5 +17,17 @@ public class SuperServices {
 		}catch(Exception e) {
 			System.out.println("error: "+e.toString());
 		}
+	} */
+	
+	private DataStock dataStock = new DataStock();
+	
+	public void AddProducto() {
+		dataStock.AddProducto();
+		
+	}
+	
+	public void ListarProductos() {
+		dataStock.ListarProductos();
+		
 	}
 }
