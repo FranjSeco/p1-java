@@ -1,5 +1,7 @@
 package control;
 
+
+import services.SuperServices;
 /**
 *
 * @author Grupo2
@@ -8,11 +10,10 @@ import gui.Menu;import model.Game;
 import services.SuperServices;
 import utilities.Datos;
 
-public class PlatformGames {
-	
+public class PlatformGames {	
 	private SuperServices services = new SuperServices();
-
 	public void startPlatform() {
+		
 		boolean seguir = true;
 		do {
 			Menu.showMenu();
@@ -30,9 +31,16 @@ public class PlatformGames {
 				break;
 				
 			case 2:
-				
 				services.AddProducto();
 				System.out.println("Has dado de alta un juego nuevo.");
+          break;
+
+				
+			case 3:
+				//filtro genero
+				services.filterGenre();
+				
+
 				break;
 			case 0:
                 continuar = salir();
