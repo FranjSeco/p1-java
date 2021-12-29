@@ -18,7 +18,7 @@ class ModelTesting {
 	@Test
 	void testCreateGame() {
 		// Given
-		Game a = new Game("Apex", "Shooter", "1998", "PC", "EA");
+		Game a = new Game("Apex","PC","1998", "Shooter",   "EA");
 
 		// When
 		Game b = new Game().createGame();

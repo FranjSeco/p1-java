@@ -73,7 +73,7 @@ public class DataStock {
 	public Map<Integer, Game> ReadData() {
 
 
-		String fileName = "C:/Users/claud/git/p1-java/LucaSteam_G02/archivoFinal2.csv";
+		String fileName = "./archivoFinal2.csv";
 
 		List<String[]> r;
 		try (CSVReader reader = new CSVReader(new FileReader(fileName))) {
