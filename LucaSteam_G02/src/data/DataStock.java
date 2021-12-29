@@ -33,19 +33,46 @@ public class DataStock {
 	public void setGameStock(Map<Integer, Game> gameStock) {
 		this.gameStock = gameStock;
 	}
+	
+	public boolean AddProducto() {
+		Game g = new Game();
+		g.createGame();
+		return AddProducto(g);
+	}
+	
+	public boolean AddProducto(Game g) {
+		return AddProducto((int) (Math.random() * 100000), g);
+	}
 
 	public void AddProducto(int codigo, Game p) {
+
 		if (gameStock.containsKey(codigo)) {
-			System.out.println("Error, no se puede añadir el juego");
+			System.out.println("Error, no se puede aï¿½adir el juego");
+			return false;
 
 		} else {
-			gameStock.put(codigo, p);
+			gameStock.put(codigo, g);
+			System.out.println(g);
+			return true;
+			
 
 		}
 
 	}
+	
+	public void ListarProductos() {
+		//Map<Integer, Game> j=new DataStock().ReadData();
+		System.out.println(gameStock);
+		
+		
+		
+		
+	}
+	
+	
 
 	public Map<Integer, Game> ReadData() {
+
 
 		String fileName = "C:\\Users\\alumno\\git\\p1-java\\LucaSteam_G02\\src\\data\\archivoFinal2.csv";
 		List<String[]> r;
@@ -56,6 +83,7 @@ public class DataStock {
 				Game a = new Game(arrays[0], arrays[1], arrays[2], arrays[3], arrays[4]);
 				this.AddProducto(listIndex, a);
 				listIndex++;
+
 			}
 		} catch (IllegalStateException e) {
 			// TODO Auto-generated catch block

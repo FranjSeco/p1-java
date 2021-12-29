@@ -6,11 +6,11 @@ import services.SuperServices;
 *
 * @author Grupo2
 */
-import gui.Menu;
+import gui.Menu;import model.Game;
+import services.SuperServices;
 import utilities.Datos;
 
-public class PlatformGames {
-		
+public class PlatformGames {	
 	private SuperServices services = new SuperServices();
 	public void startPlatform() {
 		
@@ -27,13 +27,20 @@ public class PlatformGames {
 		try {
 			switch (Datos.recogeInt()) {
 			case 1:
-				// MOSTRAR LISTA
-				//System.out.println(listaJuegos);
+				services.ListarProductos();
 				break;
+				
+			case 2:
+				services.AddProducto();
+				System.out.println("Has dado de alta un juego nuevo.");
+          break;
+
+				
 			case 3:
 				//filtro genero
 				services.filterGenre();
 				
+
 				break;
 			case 0:
                 continuar = salir();
@@ -46,7 +53,7 @@ public class PlatformGames {
 		return continuar;
 	}
 	private boolean salir() throws Exception {
-        String sino = Datos.recogeString("   ¿Esta seguro?(S/N)");
+        String sino = Datos.recogeString("   ï¿½Esta seguro?(S/N)");
         return (sino.toUpperCase().charAt(0) != 'S');
     }
 }
