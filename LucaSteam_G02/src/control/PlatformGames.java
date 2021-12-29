@@ -1,5 +1,7 @@
 package control;
 
+
+import services.SuperServices;
 /**
 *
 * @author Grupo2
@@ -8,8 +10,10 @@ import gui.Menu;
 import utilities.Datos;
 
 public class PlatformGames {
-
+		
+	private SuperServices services = new SuperServices();
 	public void startPlatform() {
+		
 		boolean seguir = true;
 		do {
 			Menu.showMenu();
@@ -24,6 +28,12 @@ public class PlatformGames {
 			switch (Datos.recogeInt()) {
 			case 1:
 				// MOSTRAR LISTA
+				//System.out.println(listaJuegos);
+				break;
+			case 3:
+				//filtro genero
+				services.filterGenre();
+				
 				break;
 			case 0:
                 continuar = salir();
