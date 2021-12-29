@@ -21,6 +21,7 @@ public class DataStock {
 
 	private Map<Integer, Game> gameStock;
 	private Set<String> uniqueGenre = new HashSet<>();
+	private Set<String> uniquePublish = new HashSet<>();
 
 	public DataStock() {
 		gameStock = new HashMap<>();
@@ -73,7 +74,9 @@ public class DataStock {
 
 
 
+
 		String fileName = "/Users/bubbahula/git/p1-java/LucaSteam_G02/src/data/archivoFinal2.csv";
+
 
 
 		List<String[]> r;
@@ -127,6 +130,28 @@ public class DataStock {
 		System.out.println();	
 	}
 
+	//Aqui hacemos el filtro del publisher
+	public Set<String> getPublisher(){
+		int gameCount = gameStock.size();
+		for (int i = 1; i < gameCount; i++) {
+			uniquePublish.add(gameStock.get(i).getPublisher());
+		}
+		return uniquePublish;
+	}
+	public void filterPublisher(String publisher) {
+		System.out.println();	
+		System.out.println("Esta es la lista filtrada en base al editor "+ publisher +" : ");	
+		System.out.println();	
+		for (int i = 0; i < gameStock.size(); i++) {
+			if (gameStock.get(i).getPublisher().equalsIgnoreCase(publisher)) {
+				System.out.println(gameStock.get(i));
+			}
+		}
+				System.out.println();	
+		System.out.println("Fin de la lista filtrada en base al editor "+ publisher +".");	
+		System.out.println();	
+  }
+
 	public void filterYear(int filter) {
 		switch (filter) {
 		case 0:
@@ -142,7 +167,7 @@ public class DataStock {
 	}
 
 	public void filterExactYear() {
-		System.out.println("Introduzca el año que desea consultar");
+		System.out.println("Introduzca el aÃ±o que desea consultar");
 		int year = 0;
 		try {
 			year = Datos.recogeInt();
