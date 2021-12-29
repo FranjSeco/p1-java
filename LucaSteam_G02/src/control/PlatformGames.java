@@ -41,6 +41,10 @@ public class PlatformGames {
 				//filtro genero
 				services.filterGenre();
 				break;
+			case 5:
+				//filtro por año
+				services.filterYear();
+				break;
 			case 0:
                 continuar = salir();
                 break;
