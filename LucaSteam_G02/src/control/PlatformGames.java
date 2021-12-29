@@ -8,9 +8,12 @@ import services.SuperServices;
 */
 import gui.Menu;
 import utilities.Datos;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class PlatformGames {	
 	private SuperServices services = new SuperServices();
+	private static final Logger logger = LogManager.getLogger("Mensaje");
 	public void startPlatform() {
 		
 		boolean seguir = true;
@@ -26,6 +29,7 @@ public class PlatformGames {
 		try {
 			switch (Datos.recogeInt()) {
 			case 1:
+				logger.info("Se ha accedido al caso 1");
 				System.out.println();	
 				System.out.println("Has elegido la opcion 1.");	
 				System.out.println();	
@@ -36,6 +40,7 @@ public class PlatformGames {
 				
 			case 2:
 				//Añadir producto
+				logger.info("Se ha accedido al caso 2");
 				System.out.println();	
 				System.out.println("Has elegido la opcion 2.");	
 				System.out.println();	
@@ -46,12 +51,14 @@ public class PlatformGames {
 				break;
 			case 3:
 				//filtro genero
+				logger.info("Se ha accedido al caso 3");
 				System.out.println();	
 				System.out.println("Has elegido la opcion 3.");	
 				System.out.println();	
 				services.filterGenre();
 				break;
-			case 4: 
+			case 4:
+				logger.info("Se ha accedido al caso 4");
 				//filtro editor
 				System.out.println();	
 				System.out.println("Has elegido la opcion 4.");	
@@ -63,18 +70,21 @@ public class PlatformGames {
 
 			case 5:
 				//filtro por año
-        System.out.println();	
+				logger.info("Se ha accedido al caso 5");
+				System.out.println();	
 				System.out.println("Has elegido la opcion 5.");	
 				System.out.println();	
 				services.filterYear();
 				break;
 
 			case 0:
+				logger.info("Se ha accedido a la salida del sistema");
                 continuar = salir();
                 break;
 			}
 
 		} catch (Exception e) {
+			logger.warn("Se ha roto algo"+ e.toString());
 			System.out.println("error: " + e.toString());
 		}
 		return continuar;
