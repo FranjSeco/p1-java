@@ -1,10 +1,8 @@
 package control;
-
-import java.util.Map;
-
-import data.DataStock;
-import model.Game;
-
+/**
+*
+* @author Grupo2
+*/
 public class Main {
 
 	public static void main(String[] args) {

@@ -1,8 +1,5 @@
 package control;
 
-import java.util.Map;
-
-import data.DataStock;
 
 import services.SuperServices;
 /**
@@ -10,11 +7,11 @@ import services.SuperServices;
 * @author Grupo2
 */
 import gui.Menu;
-import model.Game;
 import utilities.Datos;
 
 public class PlatformGames {
 		
+	private SuperServices services = new SuperServices();
 	public void startPlatform() {
 		
 		boolean seguir = true;
@@ -35,6 +32,7 @@ public class PlatformGames {
 				break;
 			case 3:
 				//filtro genero
+				services.filterGenre();
 				
 				break;
 			case 0:

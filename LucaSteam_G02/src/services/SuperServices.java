@@ -1,17 +1,27 @@
 package services;
 
-import java.io.FileReader;
-import java.util.List;
-import java.util.Set;
-
-import com.opencsv.bean.CsvToBeanBuilder;
-
+import gui.Menu;
+import utilities.Datos;
 import data.DataStock;
-import model.Game;
+/**
+*
+* @author Grupo2
+*/
 public class SuperServices {
-	private DataStock listaJuegos= new DataStock();
-	public Set<String> getGenre(){
-		return listaJuegos.getGenre();
-		
+	private DataStock listaJuegos = new DataStock();
+
+	public void filterGenre() {
+		Menu.showGenre(listaJuegos.getGenre());
+		String desiredGenre = "";
+		try {
+			String[] genreList = listaJuegos.getGenre().toArray(new String[listaJuegos.getGenre().size()]);
+			int position = Datos.recogeInt();
+			desiredGenre = genreList[position];
+			// System.out.println(desiredGenre);
+		} catch (Exception e) {
+			System.out.println("error: " + e.toString());
+		}
+
+		listaJuegos.filterGenre(desiredGenre);
 	}
-	}
+}
