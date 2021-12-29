@@ -1,5 +1,6 @@
 package services;
 
+
 import gui.Menu;
 import utilities.Datos;
 import data.DataStock;
@@ -17,11 +18,17 @@ public class SuperServices {
 			String[] genreList = listaJuegos.getGenre().toArray(new String[listaJuegos.getGenre().size()]);
 			int position = Datos.recogeInt();
 			desiredGenre = genreList[position];
-			// System.out.println(desiredGenre);
 		} catch (Exception e) {
 			System.out.println("error: " + e.toString());
 		}
-
 		listaJuegos.filterGenre(desiredGenre);
 	}
+  	public void AddProducto() {
+		listaJuegos.AddProducto();
+		
+	}
+	
+	public void ListarProductos() {
+		listaJuegos.ListarProductos();
+  }
 }

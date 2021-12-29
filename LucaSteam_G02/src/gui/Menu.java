@@ -21,16 +21,18 @@ public class Menu {
 		System.out.println("           LUCASTEAM             ");
 		System.out.println("---------------------------------");
 		System.out.println("");
-		System.out.println("     ¿Qué desea hacer?");
+		System.out.println("     Ã¯Â¿Â½QuÃ¯Â¿Â½ desea hacer?");
 		System.out.println("       1.Consultar lista de todos los juegos  ");
+		System.out.println("       2.Dar de alta un nuevo juego   ");
 		System.out.println("       3.Filtrar la lista de juegos por genero  ");
+
 	}
 
 	public static void showGenre(Set<String> p) {
 		System.out.println("---------------------------------");
-		System.out.println("          FILTRO GÉNEROS         ");
+		System.out.println("          FILTRO GÃ‰NEROS         ");
 		System.out.println("---------------------------------");
-		System.out.println("    ¿Qué genero desea?           ");
+		System.out.println("    Â¿QuÃ© genero desea?           ");
 
 		p.forEach(Genre -> {
 			System.out.println("       " + contador + "." + Genre + "       ");
