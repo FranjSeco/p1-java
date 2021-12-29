@@ -56,10 +56,11 @@ public class DataStock {
 		}
 	}
 	public void ListarProductos() {
-		//Map<Integer, Game> j=new DataStock().ReadData();
 
-		System.out.println(gameStock);
-	}
+		for(int i=1;i<100;i++) {
+		System.out.println(gameStock.get(i));	
+		}
+
 	
 	public Map<Integer, Game> ReadData() {
 
